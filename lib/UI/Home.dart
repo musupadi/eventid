@@ -4,6 +4,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import '../Constant/Colors.dart';
 import '../Constant/FontSize.dart';
+import '../Constant/Testing.dart';
 
 class Home extends StatefulWidget {
   final ScrollController controller;
@@ -39,19 +40,19 @@ class _HomeState extends State<Home> {
                   Expanded(
                       child: Row(
                         children: [
-                          Container(
-                            width: 50,
-                            height: 50,
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(10),
-                                image: DecorationImage(
-                                    image: AssetImage("assets/img/event.png")
-                                )
-                            ),
-                          ),
-                          SizedBox(
-                            width: 10,
-                          ),
+                          // Container(
+                          //   width: 50,
+                          //   height: 50,
+                          //   decoration: BoxDecoration(
+                          //       borderRadius: BorderRadius.circular(10),
+                          //       image: DecorationImage(
+                          //           image: AssetImage("assets/img/event.png")
+                          //       )
+                          //   ),
+                          // ),
+                          // SizedBox(
+                          //   width: 10,
+                          // ),
                           Text(
                             "Buatevent.id",
                             style: TextStyle(
@@ -211,13 +212,17 @@ class _HomeState extends State<Home> {
                             scrollDirection: Axis.horizontal,
                             scrollPhysics: BouncingScrollPhysics()
                         ),
-                        itemCount: 2,
+                        itemCount: bannerList.length,
                         itemBuilder: (context, index, realIndex) {
                           return Container(
                             height: double.maxFinite,
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(20),
-                              color: Colors.blue,
+                              image: DecorationImage(
+                                image: NetworkImage(
+                                  bannerList[index]['img']
+                                )
+                              )
                             ),
                           );
                         },
@@ -578,14 +583,61 @@ class _HomeState extends State<Home> {
                             child: ListView.builder(
                               physics: BouncingScrollPhysics(),
                               scrollDirection: Axis.horizontal,
-                              itemCount: 2,
+                              itemCount: placeList.length,
                               itemBuilder: (context, index) {
                                 return Container(
                                   margin: EdgeInsets.all(10),
                                   width: 250,
                                   decoration: BoxDecoration(
-                                    color: Colors.black,
-                                    borderRadius: BorderRadius.circular(20)
+                                    borderRadius: BorderRadius.circular(20),
+                                    image: DecorationImage(
+                                      image: NetworkImage(placeList[index]['img']),fit: BoxFit.fill
+                                    )
+                                  ),
+                                  child: Column(
+                                    children: [
+                                      Expanded(child: Container()),
+                                      Padding(
+                                        padding: const EdgeInsets.all(10.0),
+                                        child: Row(
+                                          children: [
+                                            Expanded(
+                                              child: Container(
+                                                decoration: BoxDecoration(
+                                                  borderRadius: BorderRadius.circular(30),
+                                                  border: Border.all(
+                                                    color: Colors.white,
+                                                    width: 1
+                                                  )
+                                                ),
+                                                child: Padding(
+                                                  padding: const EdgeInsets.all(10.0),
+                                                  child: Text(
+                                                    placeList[index]['name'],
+                                                    style: TextStyle(
+                                                      color: Colors.white,
+                                                      fontSize: MediumFontSize(),
+                                                      fontWeight: FontWeight.bold
+                                                    ),
+                                                    textAlign: TextAlign.center,
+                                                  ),
+                                                ),
+                                              ),
+                                            ),
+                                            SizedBox(width: 10),
+                                            Container(
+                                              width : 50,
+                                              height: 50,
+                                              decoration: BoxDecoration(
+                                                borderRadius: BorderRadius.circular(50),
+                                                color: Colors.white
+                                              ),
+                                              child: Icon(Icons.arrow_forward_rounded,color: Colors.black,),
+                                            )
+                                          ],
+                                        ),
+                                      )
+                                    ],
                                   ),
                                 );
                               },
@@ -593,6 +645,98 @@ class _HomeState extends State<Home> {
                           ),
                         ],
                       ),
+                    ),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    Container(
+                      margin: EdgeInsets.only(left: 10,right: 10,top: 5,bottom: 5),
+                      width: double.maxFinite,
+                      child: Text("LATEST ACTIVITIES",
+                        style: TextStyle(
+                            color: Colors.orange,
+                            fontSize: LargeFontSize()
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 10,right: 10,top: 5,bottom: 5),
+                      child: Column(
+                        mainAxisSize: MainAxisSize.max,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Text(
+                            "We deliver extraordinary experiences",
+                            style: TextStyle(
+                                fontSize: LargeFontSize(),
+                                color: Colors.black,
+                                fontWeight: FontWeight.bold
+                            ),
+                          ),
+                          Text(
+                            "Here's a glimpse of what we've been up to",
+                            style: TextStyle(
+                              fontSize: MediumFontSize(),
+                              color: Colors.black,
+                            ),
+                          ),
+                          Container(
+                            margin: EdgeInsets.all(10),
+                            width: double.maxFinite,
+                            height: 200,
+                            child: CarouselSlider.builder(
+                              options: CarouselOptions(
+                                  height: double.maxFinite,
+                                  // aspectRatio: 16/9,
+                                  viewportFraction: 1,
+                                  autoPlayInterval: Duration(seconds: 10),
+                                  autoPlayCurve: Curves.fastOutSlowIn,
+                                  enlargeCenterPage: true,
+                                  enlargeFactor: 0.5,
+                                  enableInfiniteScroll: false,
+                                  scrollDirection: Axis.horizontal,
+                                  scrollPhysics: BouncingScrollPhysics()
+                              ),
+                              itemCount: activityList.length,
+                              itemBuilder: (context, index, realIndex) {
+                                return Container(
+                                  height: double.maxFinite,
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(20),
+                                    image: DecorationImage(
+                                      image: NetworkImage(
+                                        activityList[index]['img']
+                                      ),
+                                        fit: BoxFit.fill
+                                    ),
+                                  ),
+                                  child: Column(
+                                    children: [
+                                      Expanded(child: Container()),
+                                      Padding(
+                                        padding: const EdgeInsets.all(10.0),
+                                        child: Text(
+                                          activityList[index]['name'],
+                                          style: TextStyle(
+                                            color: Colors.white,
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: MediumFontSize()
+                                          ),
+                                          textAlign: TextAlign.center,
+                                        ),
+                                      )
+                                    ],
+                                  ),
+                                );
+                              },
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    SizedBox(
+                      height: 10,
                     ),
                     Container(
                       margin: EdgeInsets.only(left: 10,right: 10,top: 5,bottom: 5),
@@ -822,6 +966,107 @@ class _HomeState extends State<Home> {
                         ],
                       ),
                     ),
+                    SizedBox(
+                      width: 10,
+                    ),
+                    Container(
+                      margin: EdgeInsets.only(left: 10,right: 10,top: 5,bottom: 5),
+                      width: double.maxFinite,
+                      child: Center(
+                        child: Text("OUR CUSTOMER",
+                          style: TextStyle(
+                              color: Colors.orange,
+                              fontSize: LargeFontSize()
+                          ),
+                        ),
+                      ),
+                    ),
+                    // Padding(
+                    //   padding: const EdgeInsets.only(left: 10,right: 10,top: 5,bottom: 5),
+                    //   child: Column(
+                    //     mainAxisSize: MainAxisSize.max,
+                    //     crossAxisAlignment: CrossAxisAlignment.start,
+                    //     mainAxisAlignment: MainAxisAlignment.start,
+                    //     children: [
+                    //       Text(
+                    //         "Our Client are at the heart of everything we do,and their success is our greatest achievement",
+                    //         style: TextStyle(
+                    //             fontSize: LargeFontSize(),
+                    //             color: Colors.black,
+                    //             fontWeight: FontWeight.bold
+                    //         ),
+                    //         textAlign: TextAlign.center,
+                    //       ),
+                    //       SizedBox(
+                    //         height: 10,
+                    //       ),
+                    //       Row(
+                    //         children: [
+                    //           Expanded(
+                    //             flex: 1,
+                    //             child: Icon(Icons.add),
+                    //           ),
+                    //           Expanded(
+                    //             flex: 1,
+                    //             child: Icon(Icons.add),
+                    //           ),
+                    //           Expanded(
+                    //             flex: 1,
+                    //             child: Icon(Icons.add),
+                    //           )
+                    //         ],
+                    //       ),
+                    //       Row(
+                    //         children: [
+                    //           Expanded(
+                    //             flex: 1,
+                    //             child: Icon(Icons.add),
+                    //           ),
+                    //           Expanded(
+                    //             flex: 1,
+                    //             child: Icon(Icons.add),
+                    //           ),
+                    //           Expanded(
+                    //             flex: 1,
+                    //             child: Icon(Icons.add),
+                    //           )
+                    //         ],
+                    //       ),
+                    //       Row(
+                    //         children: [
+                    //           Expanded(
+                    //             flex: 1,
+                    //             child: Icon(Icons.add),
+                    //           ),
+                    //           Expanded(
+                    //             flex: 1,
+                    //             child: Icon(Icons.add),
+                    //           ),
+                    //           Expanded(
+                    //             flex: 1,
+                    //             child: Icon(Icons.add),
+                    //           )
+                    //         ],
+                    //       ),
+                    //       Row(
+                    //         children: [
+                    //           Expanded(
+                    //             flex: 1,
+                    //             child: Icon(Icons.add),
+                    //           ),
+                    //           Expanded(
+                    //             flex: 1,
+                    //             child: Icon(Icons.add),
+                    //           ),
+                    //           Expanded(
+                    //             flex: 1,
+                    //             child: Icon(Icons.add),
+                    //           )
+                    //         ],
+                    //       )
+                    //     ],
+                    //   ),
+                    // ),
                     // Constant
                     SizedBox(
                       height: 50,

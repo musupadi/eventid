@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 
 
 import '../Constant/Colors.dart';
@@ -22,6 +23,41 @@ String timeAgo(String date) {
   } else {
     return "Just Now";
   }
+}
+Container LoadingContainer(double widths,double heights,String message){
+  return Container(
+    width: double.maxFinite,
+    height: double.maxFinite,
+    child: Padding(
+      padding: const EdgeInsets.all(10.0),
+      child: Column(
+        mainAxisSize: MainAxisSize.max,
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Center(
+            child: Lottie.asset(
+                "assets/lottie/not_found.json",
+                width: widths/2,
+                height: heights/2,
+                fit: BoxFit.fill
+            ),
+          ),
+          Center(
+              child: Text(
+                message,
+                style: TextStyle(
+                  color: PrimaryColors(),
+                  fontWeight: FontWeight.bold,
+                  fontSize: HeaderFontSize()
+                ),
+                textAlign: TextAlign.center,
+              )
+          ),
+        ],
+      ),
+    ),
+  );
 }
 // bool CheckerGoogle(String checkGoogle) {
 //   String check = 'https://lh3.googleusercontent.com/a/';

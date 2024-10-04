@@ -1,3 +1,4 @@
+import 'package:eventid/Model/Ascendant.dart';
 import 'package:eventid/UI/Home.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
@@ -133,8 +134,8 @@ class _DashboardState extends State<Dashboard> with SingleTickerProviderStateMix
       physics: NeverScrollableScrollPhysics(), // Disable swipe gestures
       children: [
         Home(controller: controller), // Pass the controller to Home
-        Text("Search"),
-        Text("Play"),
+        LoadingContainer(600, 600,"Search Under Development"),
+        LoadingContainer(600, 600,"Profile Under Development"),
         Text("Favorite"),
         Text("Setting"),
       ],

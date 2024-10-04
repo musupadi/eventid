@@ -28,7 +28,39 @@ List Img5(){
     'https://media.tenor.com/47qpxBq_Tw0AAAAe/cat-cat-meme.png'
   ];
 }
+final List<Map<String,dynamic>> bannerList = [
 
+  {
+    "img" : "https://static.vecteezy.com/system/resources/previews/017/694/224/non_2x/digital-technology-banner-blue-green-background-concept-cyber-technology-light-effect-abstract-tech-innovation-future-data-internet-network-ai-big-data-lines-dots-connection-illustration-vector.jpg",
+    "name": "Bali",
+  },
+  {
+    "img" : "https://as1.ftcdn.net/v2/jpg/01/94/01/00/1000_F_194010093_9tC5JNVsiEOlVDs2F5Y6d0paYrdWTdbT.jpg",
+    "name": "Jakarta",
+  }
+];
+final List<Map<String,dynamic>> activityList = [
+
+  {
+    "img" : "https://www.meydanfz.ae/wp-content/uploads/2021/10/Events-1536x864.png",
+    "name": "Event Management: Getting Started With Your Event Management Company",
+  },
+  {
+    "img" : "https://www.meydanfz.ae/wp-content/uploads/2021/10/Events-1536x864.png",
+    "name": "Event Management: Getting Started With Your Event Management Company",
+  },
+];
+final List<Map<String,dynamic>> placeList = [
+
+  {
+    "img" : "https://ik.imagekit.io/tvlk/blog/2023/09/shutterstock_631736717.jpg?tr=c-at_max",
+    "name": "Bali",
+  },
+  {
+    "img" : "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Busway_in_Bundaran_HI.jpg/1200px-Busway_in_Bundaran_HI.jpg",
+    "name": "Jakarta",
+  }
+];
 // Dummy data
 final List<Map<String, dynamic>> statusList = [
   {
