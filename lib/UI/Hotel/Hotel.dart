@@ -3,10 +3,10 @@ import 'dart:math';
 
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:chat_gpt_sdk/chat_gpt_sdk.dart';
-import 'package:Buatevent.id/API/API.dart';
-import 'package:Buatevent.id/Adapter/AdapterHotel.dart';
-import 'package:Buatevent.id/Constant/Colors.dart';
-import 'package:Buatevent.id/Model/Ascendant.dart';
+import 'package:eventid/API/API.dart';
+import 'package:eventid/Adapter/AdapterHotel.dart';
+import 'package:eventid/Constant/Colors.dart';
+import 'package:eventid/Model/Ascendant.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:permission_handler/permission_handler.dart';

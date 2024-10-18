@@ -1,5 +1,5 @@
-import 'package:Buatevent.id/Model/Ascendant.dart';
-import 'package:Buatevent.id/UI/Home.dart';
+import 'package:eventid/Model/Ascendant.dart';
+import 'package:eventid/UI/Home.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_floating_bottom_bar/flutter_floating_bottom_bar.dart';

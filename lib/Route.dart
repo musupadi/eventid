@@ -1,7 +1,7 @@
 
-import 'package:Buatevent.id/UI/Hotel/Hotel.dart';
-import 'package:Buatevent.id/UI/Hotel/Testing.dart';
-import 'package:Buatevent.id/main.dart';
+import 'package:eventid/UI/Hotel/Hotel.dart';
+import 'package:eventid/UI/Hotel/Testing.dart';
+import 'package:eventid/main.dart';
 import 'package:flutter/material.dart';
 
 import 'Dashboard.dart';

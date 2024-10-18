@@ -1,4 +1,4 @@
-package com.ascendant.Buatevent.id;
+package com.ascendant.eventid;
 
 import io.flutter.embedding.android.FlutterActivity;
 

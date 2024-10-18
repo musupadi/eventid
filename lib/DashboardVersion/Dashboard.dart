@@ -1,5 +1,5 @@
-import 'package:Buatevent.id/Constant/Colors.dart';
-import 'package:Buatevent.id/Constant/FontSize.dart';
+import 'package:eventid/Constant/Colors.dart';
+import 'package:eventid/Constant/FontSize.dart';
 import 'package:flutter/material.dart';
 
 class Dashboard extends StatefulWidget {

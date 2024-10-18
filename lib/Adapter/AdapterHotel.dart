@@ -1,4 +1,4 @@
-import 'package:Buatevent.id/Constant/FontSize.dart';
+import 'package:eventid/Constant/FontSize.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart'; // Import intl package
 class AdapterHotel extends StatefulWidget {

@@ -1,5 +1,5 @@
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:Buatevent.id/Route.dart';
+import 'package:eventid/Route.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -38,135 +38,142 @@ class _HomeState extends State<Home> {
               padding: const EdgeInsets.all(10.0),
               child: Row(
                 children: [
-                  Expanded(
-                    child: Container(
-                      width: 100,
-                      height: 50,
-                      child: Image.asset(
-                        "assets/img/buateventlogo.png",
-                        fit: BoxFit.fill,
-                      ),
+                  Container(
+                    width: 200,
+                    height: 40,
+                    child: Image.asset(
+                      "assets/img/buateventlogo.png",
+                      fit: BoxFit.fill,
                     ),
                   ),
-                  SizedBox(
-                    width: 20,
-                  ),
-                  Stack(
-                    children: [
-                      InkWell(
-                        onTap: () {
-                          setState(() {
-                            if(checknotif){
-                              checknotif = false;
-                            }else{
-                              checknotif = true;
-                            }
+                  Expanded(
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      mainAxisSize: MainAxisSize.max,
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      children: [
+                        SizedBox(
+                          width: 20,
+                        ),
+                        Stack(
+                          children: [
+                            InkWell(
+                              onTap: () {
+                                setState(() {
+                                  if(checknotif){
+                                    checknotif = false;
+                                  }else{
+                                    checknotif = true;
+                                  }
 
-                          });
-                        },
-                        child: Container(
-                            width: 45,
-                            height: 45,
-                            decoration: BoxDecoration(
-                                color: Colors.white,
-                                borderRadius: BorderRadius.circular(50)
-                            ),
-                            child: const Icon(Icons.shopping_cart, size: 30)
-                        ),
-                      ),
-                      notifsnapshot == 0 ?
-                      Container()
-                          :
-                      checknotif ?
-                      Container()
-                          :
-                      notifsnapshot <= 0 ?
-                      Container()
-                          :
-                      Container(
-                        width: 50,
-                        height: 50,
-                        child: Align(
-                          alignment: FractionalOffset.topRight,
-                          child: Container(
-                            width: 20,
-                            height: 20,
-                            decoration: BoxDecoration(
-                                color: Colors.red,
-                                borderRadius: BorderRadius.circular(50)
-                            ),
-                            child: Center(
-                                child: Text(
-                                  (notifsnapshot).toString(),
-                                  style: TextStyle(
+                                });
+                              },
+                              child: Container(
+                                  width: 45,
+                                  height: 45,
+                                  decoration: BoxDecoration(
                                       color: Colors.white,
-                                      fontSize: DefaultFontSize()
+                                      borderRadius: BorderRadius.circular(50)
                                   ),
-                                )
+                                  child: const Icon(Icons.shopping_cart, size: 30)
+                              ),
                             ),
-                          ),
+                            notifsnapshot == 0 ?
+                            Container()
+                                :
+                            checknotif ?
+                            Container()
+                                :
+                            notifsnapshot <= 0 ?
+                            Container()
+                                :
+                            Container(
+                              width: 50,
+                              height: 50,
+                              child: Align(
+                                alignment: FractionalOffset.topRight,
+                                child: Container(
+                                  width: 20,
+                                  height: 20,
+                                  decoration: BoxDecoration(
+                                      color: Colors.red,
+                                      borderRadius: BorderRadius.circular(50)
+                                  ),
+                                  child: Center(
+                                      child: Text(
+                                        (notifsnapshot).toString(),
+                                        style: TextStyle(
+                                            color: Colors.white,
+                                            fontSize: DefaultFontSize()
+                                        ),
+                                      )
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
                         ),
-                      ),
-                    ],
-                  ),
-                  Stack(
-                    children: [
-                      InkWell(
-                        onTap: () {
-                          setState(() {
-                            if(checknotif){
-                              checknotif = false;
-                            }else{
-                              checknotif = true;
-                            }
+                        Stack(
+                          children: [
+                            InkWell(
+                              onTap: () {
+                                setState(() {
+                                  if(checknotif){
+                                    checknotif = false;
+                                  }else{
+                                    checknotif = true;
+                                  }
 
-                          });
-                        },
-                        child: Container(
-                            width: 45,
-                            height: 45,
-                            decoration: BoxDecoration(
-                                color: Colors.white,
-                                borderRadius: BorderRadius.circular(50)
-                            ),
-                            child: const Icon(Icons.notifications, size: 30)
-                        ),
-                      ),
-                      notifsnapshot == 0 ?
-                      Container()
-                          :
-                      checknotif ?
-                      Container()
-                          :
-                      notifsnapshot <= 0 ?
-                      Container()
-                          :
-                      Container(
-                        width: 50,
-                        height: 50,
-                        child: Align(
-                          alignment: FractionalOffset.topRight,
-                          child: Container(
-                            width: 20,
-                            height: 20,
-                            decoration: BoxDecoration(
-                                color: Colors.red,
-                                borderRadius: BorderRadius.circular(50)
-                            ),
-                            child: Center(
-                                child: Text(
-                                  (notifsnapshot).toString(),
-                                  style: TextStyle(
+                                });
+                              },
+                              child: Container(
+                                  width: 45,
+                                  height: 45,
+                                  decoration: BoxDecoration(
                                       color: Colors.white,
-                                      fontSize: DefaultFontSize()
+                                      borderRadius: BorderRadius.circular(50)
                                   ),
-                                )
+                                  child: const Icon(Icons.notifications, size: 30)
+                              ),
                             ),
-                          ),
+                            notifsnapshot == 0 ?
+                            Container()
+                                :
+                            checknotif ?
+                            Container()
+                                :
+                            notifsnapshot <= 0 ?
+                            Container()
+                                :
+                            Container(
+                              width: 50,
+                              height: 50,
+                              child: Align(
+                                alignment: FractionalOffset.topRight,
+                                child: Container(
+                                  width: 20,
+                                  height: 20,
+                                  decoration: BoxDecoration(
+                                      color: Colors.red,
+                                      borderRadius: BorderRadius.circular(50)
+                                  ),
+                                  child: Center(
+                                      child: Text(
+                                        (notifsnapshot).toString(),
+                                        style: TextStyle(
+                                            color: Colors.white,
+                                            fontSize: DefaultFontSize()
+                                        ),
+                                      )
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
                         ),
-                      ),
-                    ],
-                  ),
+                      ],
+                    ),
+                  )
                 ],
               ),
             ),
