@@ -1,4 +1,5 @@
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:eventid/Route.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -38,31 +39,17 @@ class _HomeState extends State<Home> {
               child: Row(
                 children: [
                   Expanded(
-                      child: Row(
-                        children: [
-                          // Container(
-                          //   width: 50,
-                          //   height: 50,
-                          //   decoration: BoxDecoration(
-                          //       borderRadius: BorderRadius.circular(10),
-                          //       image: DecorationImage(
-                          //           image: AssetImage("assets/img/event.png")
-                          //       )
-                          //   ),
-                          // ),
-                          // SizedBox(
-                          //   width: 10,
-                          // ),
-                          Text(
-                            "Buatevent.id",
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontSize: HeaderFontSize(),
-                                fontWeight: FontWeight.bold
-                            ),
-                          )
-                        ],
-                      )
+                    child: Container(
+                      width: 100,
+                      height: 50,
+                      child: Image.asset(
+                        "assets/img/buateventlogo.png",
+                        fit: BoxFit.fill,
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    width: 20,
                   ),
                   Stack(
                     children: [
@@ -301,27 +288,32 @@ class _HomeState extends State<Home> {
                                   flex: 1,
                                   child: Padding(
                                     padding: const EdgeInsets.all(5.0),
-                                    child: Column(
-                                      children: [
-                                        Container(
-                                          width: 40,
-                                          height: 40,
-                                          decoration: BoxDecoration(
-                                              borderRadius: BorderRadius.circular(50),
-                                              color: BackgroundGray()
+                                    child: InkWell(
+                                      onTap: () {
+                                        toHotel(context,false);
+                                      },
+                                      child: Column(
+                                        children: [
+                                          Container(
+                                            width: 40,
+                                            height: 40,
+                                            decoration: BoxDecoration(
+                                                borderRadius: BorderRadius.circular(50),
+                                                color: BackgroundGray()
+                                            ),
+                                            child: Icon(Icons.hotel,color: PrimaryColors()),
                                           ),
-                                          child: Icon(Icons.hotel,color: PrimaryColors()),
-                                        ),
-                                        SizedBox(
-                                          height: 10,
-                                        ),
-                                        Text("Hotel & Venue",
-                                          style: TextStyle(
-                                              fontSize: DefaultFontSize()
+                                          SizedBox(
+                                            height: 10,
                                           ),
-                                          textAlign: TextAlign.center,
-                                        )
-                                      ],
+                                          Text("Hotel & Venue",
+                                            style: TextStyle(
+                                                fontSize: DefaultFontSize()
+                                            ),
+                                            textAlign: TextAlign.center,
+                                          )
+                                        ],
+                                      ),
                                     ),
                                   ),
                                 ),
@@ -357,27 +349,32 @@ class _HomeState extends State<Home> {
                                   flex: 1,
                                   child: Padding(
                                     padding: const EdgeInsets.all(5.0),
-                                    child: Column(
-                                      children: [
-                                        Container(
-                                          width: 40,
-                                          height: 40,
-                                          decoration: BoxDecoration(
-                                              borderRadius: BorderRadius.circular(50),
-                                              color: BackgroundGray()
+                                    child: InkWell(
+                                      onTap: () {
+                                        // toTesting(context,false);
+                                      },
+                                      child: Column(
+                                        children: [
+                                          Container(
+                                            width: 40,
+                                            height: 40,
+                                            decoration: BoxDecoration(
+                                                borderRadius: BorderRadius.circular(50),
+                                                color: BackgroundGray()
+                                            ),
+                                            child: Icon(Icons.add_location,color: PrimaryColors()),
                                           ),
-                                          child: Icon(Icons.add_location,color: PrimaryColors()),
-                                        ),
-                                        SizedBox(
-                                          height: 10,
-                                        ),
-                                        Text("Destination",
-                                          style: TextStyle(
-                                              fontSize: DefaultFontSize()
+                                          SizedBox(
+                                            height: 10,
                                           ),
-                                          textAlign: TextAlign.center,
-                                        )
-                                      ],
+                                          Text("Destination",
+                                            style: TextStyle(
+                                                fontSize: DefaultFontSize()
+                                            ),
+                                            textAlign: TextAlign.center,
+                                          )
+                                        ],
+                                      ),
                                     ),
                                   ),
                                 ),

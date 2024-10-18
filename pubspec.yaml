@@ -41,6 +41,10 @@ dependencies:
   font_awesome_flutter: ^10.7.0
   flutter_floating_bottom_bar: ^1.2.0
   carousel_slider: ^4.2.1
+  chat_gpt_sdk: ^3.1.0
+  speech_to_text: ^7.0.0
+  permission_handler: ^10.0.0
+  intl: ^0.17.0
 
 dev_dependencies:
   flutter_test:
@@ -52,10 +56,16 @@ dev_dependencies:
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
   flutter_lints: ^3.0.0
+  flutter_launcher_icons: ^0.11.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
-
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "assets/img/logo.png" # Path ke ikon aplikasi Anda
+  adaptive_icon_background: "#ffffff" # Optional: Warna latar belakang untuk ikon adaptif Android
+#  adaptive_icon_foreground: "assets/app_icon_foreground.png" # Optional: Ikon foreground untuk Android adaptif
 # The following section is specific to Flutter packages.
 flutter:
 

@@ -24,6 +24,7 @@ String timeAgo(String date) {
     return "Just Now";
   }
 }
+
 Container LoadingContainer(double widths,double heights,String message){
   return Container(
     width: double.maxFinite,

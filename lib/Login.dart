@@ -62,7 +62,7 @@ class _LoginState extends State<Login> {
                             Container(
                                 height: 250,
                                 width: double.infinity,
-                                child: Image.asset("assets/img/event.png",fit: BoxFit.cover)
+                                child: Image.asset("assets/img/logo.png",fit: BoxFit.cover)
                             ),
                             Container(
                               color: PrimaryColors(),
@@ -228,10 +228,12 @@ class _LoginState extends State<Login> {
                                           children: <Widget>[
                                             InkWell(
                                               onTap: () {
-                                                setState(() async{
-                                                  isLoading = true;
-                                                  // isLoading = await handleSignIn(context);
-                                                });
+                                                Message("On Progress", "Login Via Google on Development", context);
+                                                // setState(() async{
+                                                //
+                                                //   // isLoading = true;
+                                                //   // isLoading = await handleSignIn(context);
+                                                // });
                                                 // handleSignOut();
                                               },
                                               child: Container(

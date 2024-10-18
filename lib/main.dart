@@ -125,23 +125,18 @@ class _MyHomePageState extends State<MyHomePage> {
                       height: 200,
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(20),
-                          image: DecorationImage(image: AssetImage("assets/img/event.png"))
+                          image: DecorationImage(
+                              image: AssetImage("assets/img/logo.png")
+                          )
                       ),
                     ),
                   ),
                   SizedBox(
                     height: 10,
                   ),
-                  // Center(
-                  //   child: Lottie.asset(
-                  //     "assets/lottie/loading.json",
-                  //     width: 400,
-                  //     height: 400,
-                  //   ),
-                  // ),
                   Container(
                     child: Text(
-                      "Welcome To Kembang",
+                      "Welcome To Buatevent.id",
                       style: TextStyle(
                           fontSize: 20,
                           fontStyle: FontStyle.italic,
