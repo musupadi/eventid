@@ -5,10 +5,10 @@
 // 'flutter create' template.
 
 // The application's name. By default this is also the title of the Flutter window.
-PRODUCT_NAME = eventid
+PRODUCT_NAME = Buatevent.id
 
 // The application's bundle identifier
-PRODUCT_BUNDLE_IDENTIFIER = com.ascendant.eventid
+PRODUCT_BUNDLE_IDENTIFIER = com.ascendant.Buatevent.id
 
 // The copyright displayed in application information
 PRODUCT_COPYRIGHT = Copyright © 2024 com.ascendant. All rights reserved.
