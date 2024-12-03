@@ -27,8 +27,8 @@ String timeAgo(String date) {
 
 Container LoadingContainer(double widths,double heights,String message){
   return Container(
-    width: double.maxFinite,
-    height: double.maxFinite,
+    width: widths,
+    height: heights,
     child: Padding(
       padding: const EdgeInsets.all(10.0),
       child: Column(
@@ -39,8 +39,8 @@ Container LoadingContainer(double widths,double heights,String message){
           Center(
             child: Lottie.asset(
                 "assets/lottie/not_found.json",
-                width: widths/2,
-                height: heights/2,
+                width: widths/1.25,
+                height: heights/1.25,
                 fit: BoxFit.fill
             ),
           ),

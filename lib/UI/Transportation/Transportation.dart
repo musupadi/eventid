@@ -4,7 +4,7 @@ import 'dart:math';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:chat_gpt_sdk/chat_gpt_sdk.dart';
 import 'package:eventid/API/API.dart';
-import 'package:eventid/Adapter/AdapterHotel.dart';
+import 'package:eventid/Adapter/AdapterTransportation.dart';
 import 'package:eventid/Constant/Colors.dart';
 import 'package:eventid/Model/Ascendant.dart';
 import 'package:flutter/material.dart';
@@ -18,14 +18,14 @@ import '../../Constant/FontSize.dart';
 import '../../Constant/Testing.dart';
 import '../../Model/ChatGPTService.dart';
 
-class Hotel extends StatefulWidget {
-  const Hotel({super.key});
+class Transportation extends StatefulWidget {
+  const Transportation({super.key});
 
   @override
-  State<Hotel> createState() => _HotelState();
+  State<Transportation> createState() => _TransportationState();
 }
 
-class _HotelState extends State<Hotel> {
+class _TransportationState extends State<Transportation> {
   final ChatGPTService _chatGPTService = ChatGPTService();
   final TextEditingController _controller = TextEditingController();
   String _response = '';
@@ -181,7 +181,7 @@ class _HotelState extends State<Hotel> {
                   children: [
                     Expanded(
                       child: Text(
-                        "Hotel",
+                        "Transportation",
                         style: TextStyle(
                             color: Colors.white,
                             fontWeight: FontWeight.bold,
@@ -294,16 +294,16 @@ class _HotelState extends State<Hotel> {
                         padding: const EdgeInsets.all(10.0),
                         child: Container(
                           decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(20),
-                              color: Colors.white,
-                              boxShadow: [
-                                BoxShadow(
-                                    blurRadius: 3,
-                                    color: Colors.grey,
-                                    offset: Offset(0,2),
-                                    spreadRadius: 2
-                                )
-                              ],
+                            borderRadius: BorderRadius.circular(20),
+                            color: Colors.white,
+                            boxShadow: [
+                              BoxShadow(
+                                  blurRadius: 3,
+                                  color: Colors.grey,
+                                  offset: Offset(0,2),
+                                  spreadRadius: 2
+                              )
+                            ],
                           ),
                           child: Padding(
                             padding: const EdgeInsets.all(10.0),
@@ -365,119 +365,119 @@ class _HotelState extends State<Hotel> {
                           ),
                         ),
                       ),
+                      SizedBox(
+                        height: 10,
+                      ),
                       // Delete This
-                      SizedBox(
-                        height: 10,
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.all(10.0),
-                        child: Container(
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(20),
-                              color: Colors.white,
-                              boxShadow: [
-                                BoxShadow(
-                                    blurRadius: 3,
-                                    color: Colors.grey,
-                                    offset: Offset(0,2),
-                                    spreadRadius: 2
-                                )
-                              ],
-                          ),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            mainAxisSize: MainAxisSize.max,
-                            children: [
-                              SizedBox(
-                                height: 10,
-                              ),
-                              Text(
-                                "Explore Hotel & Venue",
-                                style: TextStyle(
-                                    fontSize: HeaderFontSize(),
-                                    color: Colors.black,
-                                    fontWeight: FontWeight.bold),
-                              ),
-                              Container(
-                                margin: EdgeInsets.all(10),
-                                width: double.maxFinite,
-                                decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(20),
-                                    color: Colors.white,
-                                    border: Border.all(
-                                        color: Colors.grey.withOpacity(0.3))),
-                                child: TextField(
-                                  decoration: InputDecoration(
-                                    hintText: "Search Location",
-                                    prefixIcon:
-                                    Icon(Icons.location_on_sharp),
-                                    border: InputBorder.none,
-                                  ),
-                                ),
-                              ),
-                              Container(
-                                width: double.maxFinite,
-                                margin: EdgeInsets.all(10),
-                                decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(20),
-                                    color: Colors.white,
-                                    border: Border.all(
-                                        color: Colors.grey.withOpacity(0.3))),
-                                child: TextField(
-                                  decoration: InputDecoration(
-                                    hintText: "Check In",
-                                    prefixIcon: Icon(Icons.date_range),
-                                    border: InputBorder.none,
-                                  ),
-                                ),
-                              ),
-                              Container(
-                                margin: EdgeInsets.all(10),
-                                width: double.maxFinite,
-                                decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(20),
-                                    color: Colors.white,
-                                    border: Border.all(
-                                        color: Colors.grey.withOpacity(0.3))),
-                                child: TextField(
-                                  decoration: InputDecoration(
-                                    hintText: "Check Out",
-                                    prefixIcon: Icon(Icons.date_range),
-                                    border: InputBorder.none,
-                                  ),
-                                ),
-                              ),
-                              Container(
-                                margin: EdgeInsets.all(10),
-                                width: double.maxFinite,
-                                decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(20),
-                                    color: Colors.white,
-                                    border: Border.all(
-                                        color: Colors.grey.withOpacity(0.3))),
-                                child: TextField(
-                                  decoration: InputDecoration(
-                                    hintText: "Guest and Room",
-                                    prefixIcon: Icon(Icons.person),
-                                    border: InputBorder.none,
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                      SizedBox(
-                        height: 10,
-                      ),
+                      // Padding(
+                      //   padding: const EdgeInsets.all(10.0),
+                      //   child: Container(
+                      //     decoration: BoxDecoration(
+                      //       borderRadius: BorderRadius.circular(20),
+                      //       color: Colors.white,
+                      //       boxShadow: [
+                      //         BoxShadow(
+                      //             blurRadius: 3,
+                      //             color: Colors.grey,
+                      //             offset: Offset(0,2),
+                      //             spreadRadius: 2
+                      //         )
+                      //       ],
+                      //     ),
+                      //     child: Column(
+                      //       mainAxisAlignment: MainAxisAlignment.center,
+                      //       crossAxisAlignment: CrossAxisAlignment.center,
+                      //       mainAxisSize: MainAxisSize.max,
+                      //       children: [
+                      //         SizedBox(
+                      //           height: 10,
+                      //         ),
+                      //         Text(
+                      //           "Explore Transportation & Venue",
+                      //           style: TextStyle(
+                      //               fontSize: HeaderFontSize(),
+                      //               color: Colors.black,
+                      //               fontWeight: FontWeight.bold),
+                      //         ),
+                      //         Container(
+                      //           margin: EdgeInsets.all(10),
+                      //           width: double.maxFinite,
+                      //           decoration: BoxDecoration(
+                      //               borderRadius: BorderRadius.circular(20),
+                      //               color: Colors.white,
+                      //               border: Border.all(
+                      //                   color: Colors.grey.withOpacity(0.3))),
+                      //           child: TextField(
+                      //             decoration: InputDecoration(
+                      //               hintText: "Search Location",
+                      //               prefixIcon:
+                      //               Icon(Icons.location_on_sharp),
+                      //               border: InputBorder.none,
+                      //             ),
+                      //           ),
+                      //         ),
+                      //         Container(
+                      //           width: double.maxFinite,
+                      //           margin: EdgeInsets.all(10),
+                      //           decoration: BoxDecoration(
+                      //               borderRadius: BorderRadius.circular(20),
+                      //               color: Colors.white,
+                      //               border: Border.all(
+                      //                   color: Colors.grey.withOpacity(0.3))),
+                      //           child: TextField(
+                      //             decoration: InputDecoration(
+                      //               hintText: "Check In",
+                      //               prefixIcon: Icon(Icons.date_range),
+                      //               border: InputBorder.none,
+                      //             ),
+                      //           ),
+                      //         ),
+                      //         Container(
+                      //           margin: EdgeInsets.all(10),
+                      //           width: double.maxFinite,
+                      //           decoration: BoxDecoration(
+                      //               borderRadius: BorderRadius.circular(20),
+                      //               color: Colors.white,
+                      //               border: Border.all(
+                      //                   color: Colors.grey.withOpacity(0.3))),
+                      //           child: TextField(
+                      //             decoration: InputDecoration(
+                      //               hintText: "Check Out",
+                      //               prefixIcon: Icon(Icons.date_range),
+                      //               border: InputBorder.none,
+                      //             ),
+                      //           ),
+                      //         ),
+                      //         Container(
+                      //           margin: EdgeInsets.all(10),
+                      //           width: double.maxFinite,
+                      //           decoration: BoxDecoration(
+                      //               borderRadius: BorderRadius.circular(20),
+                      //               color: Colors.white,
+                      //               border: Border.all(
+                      //                   color: Colors.grey.withOpacity(0.3))),
+                      //           child: TextField(
+                      //             decoration: InputDecoration(
+                      //               hintText: "Guest and Room",
+                      //               prefixIcon: Icon(Icons.person),
+                      //               border: InputBorder.none,
+                      //             ),
+                      //           ),
+                      //         ),
+                      //       ],
+                      //     ),
+                      //   ),
+                      // ),
+                      // SizedBox(
+                      //   height: 10,
+                      // ),
                       // Delete This
                       FutureBuilder(
-                        future: HotelNLP(context, _controller.text),
+                        future: TransportationNLP(context, _controller.text),
                         builder: (context, snapshot) {
                           print("Zyarga Decode "+_controller.text);
                           if (snapshot.connectionState == ConnectionState.waiting) {
-                            return LoadingContainer(400, 400, "Searching Hotel");
+                            return LoadingContainer(400, 400, "Searching Transportation");
                           } else if (snapshot.hasError) {
                             return Center(
                               child: Text('Error: ${snapshot.error}'),
@@ -488,28 +488,30 @@ class _HotelState extends State<Hotel> {
                               physics: NeverScrollableScrollPhysics(),
                               itemCount: snapshot.requireData.length,
                               itemBuilder: (context, index) {
-                                return AdapterHotel(
+                                return AdapterTransportation(
                                   id: snapshot.requireData[index]['id'].toString(),
                                   name: snapshot.requireData[index]['name'].toString(),
-                                  address: snapshot.requireData[index]['address'].toString(),
+                                  duration: snapshot.requireData[index]['duration'].toString(),
+                                  price: snapshot.requireData[index]['price'].toString(),
+                                  area_from: snapshot.requireData[index]['area_from'].toString(),
+                                  area_to: snapshot.requireData[index]['area_to'].toString(),
                                   image: snapshot.requireData[index]['image'].toString(),
                                   type: snapshot.requireData[index]['type'].toString(),
-                                  area: snapshot.requireData[index]['area'].toString(),
-                                  RB: snapshot.requireData[index]['RB'].toString(),
-                                  HD: snapshot.requireData[index]['HD'].toString(),
-                                  FD: snapshot.requireData[index]['FD'].toString(),
-                                  FB: snapshot.requireData[index]['FB'].toString(),
                                 );
                               },
                             );
                           } else {
                             // Jika tidak ada data yang ditemukan
                             return Center(
-                              child: Text("No hotels found"),
+                              child: Text("No Transportations found"),
                             );
                           }
                         },
                       ),
+                      SizedBox(
+                        height: 10,
+                      ),
+
                       // THIS
                       Container(
                         margin: EdgeInsets.only(left: 10,right: 10,top: 5,bottom: 5),

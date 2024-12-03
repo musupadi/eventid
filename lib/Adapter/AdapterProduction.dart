@@ -3,37 +3,28 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
 import '../API/Server.dart'; // Import intl package
-class AdapterHotel extends StatefulWidget {
+class AdapterProduction extends StatefulWidget {
   String id;
   String name;
-  String address;
-  String image;
   String type;
-  String area;
-  String RB;
-  String HD;
-  String FD;
-  String FB;
+  String image;
+  String price;
 
-  AdapterHotel({
+
+  AdapterProduction({
     required this.id,
     required this.name,
-    required this.address,
-    required this.image,
     required this.type,
-    required this.area,
-    required this.RB,
-    required this.HD,
-    required this.FD,
-    required this.FB,
+    required this.image,
+    required this.price,
     super.key
   });
 
   @override
-  State<AdapterHotel> createState() => _AdapterHotelState();
+  State<AdapterProduction> createState() => _AdapterProductionState();
 }
 
-class _AdapterHotelState extends State<AdapterHotel> {
+class _AdapterProductionState extends State<AdapterProduction> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -70,43 +61,35 @@ class _AdapterHotelState extends State<AdapterHotel> {
                         topLeft: Radius.circular(20),
                         topRight: Radius.circular(20)
                     ),
-                    image: DecorationImage(
-                        image: NetworkImage("https://admin.buatevent.id/img/merchandise/default.png"),fit: BoxFit.fill
+                    image: DecorationImage(image: NetworkImage(ImageBaseURL('production')+widget.image),fit: BoxFit.fill)
+                  ),
+                ),
 
-                        // image: NetworkImage(ImageBaseURL('transportation')+widget.image),fit: BoxFit.fill
-                    )
-                  ),
-                ),
                 Padding(
                   padding: const EdgeInsets.all(10.0),
-                  child: Row(
-                    children: [
-                      Icon(Icons.star,color: Colors.amber,),
-                      Text(widget.type)
-                    ],
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(10.0),
-                  child: Text(widget.name,
+                  child: Text(
+                    widget.name,
                     style: TextStyle(
                       color: Colors.black,
-                      fontWeight: FontWeight.bold
+                      fontWeight: FontWeight.bold,
                     ),
                     textAlign: TextAlign.left,
+                    softWrap: true, // Mengizinkan teks untuk beralih ke baris berikutnya jika terlalu panjang
+                    overflow: TextOverflow.visible, // Mengatur overflow agar teks tidak terpotong
+                    maxLines: 2, // Membatasi maksimal 2 baris agar tetap rapi
                   ),
                 ),
                 Padding(
                   padding: const EdgeInsets.all(10.0),
                   child: Row(
                     children: [
-                      Icon(Icons.location_pin),
+                      Icon(Icons.type_specimen),
                       SizedBox(
                         width: 10,
                       ),
                       Expanded( // Membuat teks dapat wrap jika kepanjangan
                         child: Text(
-                          widget.address + " - " + widget.area,
+                          widget.type,
                           softWrap: true, // Mengizinkan teks untuk wrap ke baris berikutnya
                           overflow: TextOverflow.visible, // Mengatur overflow agar teks tidak terpotong
                         ),
@@ -157,7 +140,7 @@ class _AdapterHotelState extends State<AdapterHotel> {
                             // Dalam widget
                             Text(
                               NumberFormat.currency(locale: 'id', symbol: 'Rp.', decimalDigits: 0)
-                                  .format(int.parse(widget.RB)), // Mengubah widget.RB menjadi format rupiah
+                                  .format(int.parse(widget.price)), // Mengubah widget.RB menjadi format rupiah
                               textAlign: TextAlign.center,
                               style: TextStyle(
                                 fontSize: LargeFontSize(),

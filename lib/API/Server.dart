@@ -1,11 +1,13 @@
 String BaseURL(){
-  return "https://buatevent.id/";
+  // return "http://10.0.15.35/buateventid/";
+  // return "http://10.0.15.35/buateventid/";
+  return "https://admin.buatevent.id/";
 }
 String APIBaseURL(){
   return BaseURL()+"api/";
 }
-String ImageBaseURL(){
-  return BaseURL()+"img/post/";
+String ImageBaseURL(String table){
+  return BaseURL()+"img/$table/";
 }
 String ProfileImageBaseURL(){
   return BaseURL()+"img/profile/";
@@ -32,8 +34,29 @@ Map<String,String> headerBuilder(String token) {
 }
 
 // NLP
+String APINLP(){
+  return "Nlp";
+}
 String APIHotelNLP(){
-  return "Nlp/HotelNLP";
+  return "Nlp/Hotel";
+}
+String APITransportationNLP(){
+  return "Nlp/Transportation";
+}
+String APIDestinationNLP(){
+  return "Nlp/Destination";
+}
+String APIMerchandiseNLP(){
+  return "Nlp/Merchandise";
+}
+String APIProductionNLP(){
+  return "Nlp/Production";
+}
+String APIActivityNLP(){
+  return "Nlp/Activity";
+}
+String APITournamentNLP(){
+  return "Nlp/Tournament";
 }
 
 
